@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Detail Produk - NusaBeli</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <style>
+      :root {
+        --primary: #006b68;
+        --background: #f3f4f6;
+        --border: #e5e7eb;
+        --text: #1f2937;
+        --secondary: #6b7280;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #d6d6d6;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mobile {
+        width: 390px;
+        min-height: 844px;
+        background: white;
+        position: relative;
+      }
+
+      /* HEADER */
+
+      .header {
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        border-bottom: 1px solid var(--border);
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .header-title {
+        color: var(--primary);
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 16px;
+      }
+
+      .material-symbols-outlined {
+        color: #444;
+        cursor: pointer;
+      }
+
+      /* PRODUCT IMAGE */
+
+      .product-image {
+        width: 100%;
+        height: 395px;
+        background: #f5f5f5;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .slider {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 0;
+        background: white;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #d1d5db;
+      }
+
+      .dot.active {
+        background: #8c8c8c;
+      }
+
+      /* PRODUCT INFO */
+
+      .product-info {
+        background: white;
+        padding: 0 16px 16px;
+      }
+
+      .price {
+        font-size: 34px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .product-name {
+        font-size: 20px;
+        color: var(--text);
+        line-height: 1.5;
+        margin-top: 4px;
+      }
+
+      .badge {
+        margin-top: 12px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #edf6ff;
+        color: #2563eb;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .badge .material-symbols-outlined {
+        color: #2563eb;
+        font-size: 16px;
+      }
+
+      .stats {
+        margin-top: 16px;
+        border-top: 1px solid var(--border);
+        padding-top: 14px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .rating {
+        font-size: 15px;
+        color: #374151;
+      }
+
+      .sold {
+        color: #6b7280;
+        font-size: 15px;
+      }
+
+      /* SECTION */
+
+      .section {
+        margin-top: 8px;
+        background: white;
+        padding: 16px;
+      }
+
+      .section-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #222;
+        margin-bottom: 14px;
+      }
+
+      /* SIZE */
+
+      .size-group {
+        display: flex;
+        gap: 10px;
+      }
+
+      .size-btn {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+      }
+
+      .size-btn.active {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* STORE */
+
+      .store-card {
+        margin-top: 8px;
+        background: white;
+        padding: 16px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .store-left {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .store-logo {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        background: #efefef;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .store-logo .material-symbols-outlined {
+        color: #666;
+      }
+
+      .store-name {
+        font-weight: 600;
+        color: #222;
+      }
+
+      .store-location {
+        font-size: 13px;
+        color: #777;
+        margin-top: 2px;
+      }
+
+      .visit-btn {
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        background: white;
+        padding: 8px 18px;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+
+      /* SIMILAR PRODUCT */
+
+      .similar {
+        margin-top: 8px;
+        background: white;
+        padding: 16px;
+      }
+
+      .product-list {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+      }
+
+      .product-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .product-card {
+        min-width: 110px;
+        border: 1px solid #ececec;
+        border-radius: 10px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 110px;
+        object-fit: cover;
+      }
+
+      .product-price {
+        padding: 8px;
+        color: var(--primary);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* REVIEW */
+
+      .review-section {
+        margin-top: 8px;
+        background: white;
+        padding: 16px;
+        padding-bottom: 100px;
+      }
+
+      .notice {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: #fafafa;
+        padding: 14px;
+        margin-bottom: 20px;
+      }
+
+      .notice-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .notice-text {
+        margin-top: 6px;
+        font-size: 13px;
+        color: #6b7280;
+        line-height: 1.6;
+      }
+
+      .review {
+        display: flex;
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #b26d35;
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .review-name {
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .review-date {
+        color: #9ca3af;
+        font-size: 12px;
+      }
+
+      .star {
+        color: #f59e0b;
+        margin-top: 3px;
+      }
+
+      .review-text {
+        margin-top: 8px;
+        color: #374151;
+        line-height: 1.7;
+      }
+
+      /* BOTTOM BUTTON */
+
+      .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        width: 390px;
+        background: white;
+        border-top: 1px solid var(--border);
+        padding: 12px 16px;
+      }
+
+      .cart-btn {
+        width: 100%;
+        height: 52px;
+        border: none;
+        border-radius: 12px;
+        background: var(--primary);
+        color: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .cart-btn .material-symbols-outlined {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      <!-- HEADER -->
+
+      <div class="header">
+        <div class="header-left">
+          <span class="material-symbols-outlined"> arrow_back </span>
+
+          <div class="header-title">Detail Produk</div>
+        </div>
+
+        <div class="header-right">
+          <span class="material-symbols-outlined"> shopping_cart </span>
+
+          <span class="material-symbols-outlined"> menu </span>
+        </div>
+      </div>
+
+      <!-- PRODUCT IMAGE -->
+
+      <div class="product-image">
+        <img src="assets/batik1.png" alt="Produk" />
+      </div>
+
+      <div class="slider">
+        <div class="dot"></div>
+        <div class="dot active"></div>
+        <div class="dot"></div>
+      </div>
+
+      <!-- PRODUCT INFO -->
+
+      <div class="product-info">
+        <div class="price">Rp 150.000</div>
+
+        <div class="product-name">Kemeja Batik Biru Motif Mega Mendung</div>
+
+        <div class="badge">
+          <span class="material-symbols-outlined"> verified </span>
+
+          UMKM Lokal Terverifikasi
+        </div>
+
+        <div class="stats">
+          <div class="rating">★ 4.8 (120 ulasan)</div>
+
+          <div class="sold">Terjual 120</div>
+        </div>
+      </div>
+
+      <!-- SIZE -->
+
+      <div class="section">
+        <div class="section-title">Pilih Ukuran</div>
+
+        <div class="size-group">
+          <div class="size-btn">M</div>
+          <div class="size-btn active">L</div>
+          <div class="size-btn">XL</div>
+        </div>
+      </div>
+
+      <!-- STORE -->
+
+      <div class="store-card">
+        <div class="store-left">
+          <div class="store-logo">
+            <span class="material-symbols-outlined"> storefront </span>
+          </div>
+
+          <div>
+            <div class="store-name">Batik Trusmi Jaya</div>
+
+            <div class="store-location">Cirebon</div>
+          </div>
+        </div>
+
+        <button class="visit-btn">Kunjungi</button>
+      </div>
+
+      <!-- PRODUK SERUPA -->
+
+      <div class="similar">
+        <div class="section-title">Produk Serupa</div>
+
+        <div class="product-list">
+          <div class="product-card">
+            <img src="assets/batik1.png" />
+            <div class="product-price">Rp 150.000</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/batik2.png" />
+            <div class="product-price">Rp 350.000</div>
+          </div>
+
+          <div class="product-card">
+            <img src="assets/batik3.png" />
+            <div class="product-price">Rp 125.000</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ULASAN -->
+
+      <div class="review-section">
+        <div class="section-title">Ulasan Pembeli</div>
+
+        <div class="notice">
+          <div class="notice-title">AI Moderation System</div>
+
+          <div class="notice-text">
+            Foto ulasan dipindai otomatis oleh sistem keamanan AI untuk menjaga
+            kenyamanan dan keamanan bersama.
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="avatar">A</div>
+
+          <div>
+            <div class="review-name">Andi S.</div>
+
+            <div class="review-date">2 hari lalu</div>
+
+            <div class="star">★★★★★</div>
+
+            <div class="review-text">
+              Bahannya bagus banget, jahitan rapi. Cocok untuk dipakai acara
+              formal.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BUTTON -->
+
+    <div class="bottom-bar">
+      <button class="cart-btn">
+        <span class="material-symbols-outlined"> add_shopping_cart </span>
+
+        Tambah ke Keranjang
+      </button>
+    </div>
+  </body>
+</html>

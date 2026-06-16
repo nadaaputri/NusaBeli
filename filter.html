@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Filter & Urutkan</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #d9d9d9;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mobile {
+        width: 390px;
+        height: 844px;
+        background: #f7f8f8;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* HEADER */
+
+      .header {
+        height: 90px;
+        background: #f7f8f8;
+        border-bottom: 1px solid #e5e7eb;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 30px;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+        color: #202124;
+      }
+
+      .close {
+        font-size: 34px;
+        color: #4b5563;
+      }
+
+      /* CONTENT */
+
+      .content {
+        padding: 24px 30px;
+        height: 620px;
+        overflow-y: auto;
+      }
+
+      .section {
+        margin-bottom: 32px;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 14px;
+        color: #222;
+      }
+
+      /* DROPDOWN */
+
+      .dropdown {
+        width: 100%;
+        height: 74px;
+        border-radius: 14px;
+        background: #ededed;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 16px;
+      }
+
+      .dropdown span {
+        font-size: 18px;
+      }
+
+      .dropdown .material-symbols-outlined {
+        color: #6b7280;
+      }
+
+      /* PRICE */
+
+      .price-row {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .price-input {
+        flex: 1;
+        height: 76px;
+        background: #ededed;
+        border: none;
+        border-radius: 14px;
+
+        padding: 0 16px;
+        font-size: 18px;
+      }
+
+      .separator {
+        font-size: 28px;
+      }
+
+      /* LOCATION */
+
+      .location-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .location-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .location-item input {
+        width: 30px;
+        height: 30px;
+        accent-color: #006b68;
+      }
+
+      .location-item label {
+        font-size: 20px;
+        color: #222;
+      }
+
+      /* BUTTON AREA */
+
+      .bottom {
+        position: absolute;
+        bottom: 78px;
+        left: 0;
+        width: 100%;
+
+        padding: 20px 30px;
+        border-top: 1px solid #e5e7eb;
+
+        background: #f7f8f8;
+      }
+
+      .show-btn {
+        width: 100%;
+        height: 76px;
+        border: none;
+
+        background: #006b68;
+        color: white;
+
+        font-size: 20px;
+        font-weight: 500;
+
+        border-radius: 38px;
+      }
+
+      /* NAVBAR */
+
+      .navbar {
+        position: absolute;
+        bottom: 0;
+
+        width: 100%;
+        height: 78px;
+
+        background: #d8d8d8;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+
+        color: #222;
+        text-decoration: none;
+      }
+
+      .nav-item span:first-child {
+        font-size: 28px;
+      }
+
+      .nav-item.active {
+        background: #a86f3c;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+
+        justify-content: center;
+        margin-top: -40px;
+
+        color: #222;
+      }
+
+      .nav-item.active div {
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mobile">
+      <div class="header">
+        <div class="title">Filter & Urutkan</div>
+
+        <span class="material-symbols-outlined close"> close </span>
+      </div>
+
+      <div class="content">
+        <!-- URUTKAN -->
+
+        <div class="section">
+          <div class="label">Urutkan</div>
+
+          <div class="dropdown" onclick="window.location.href = 'urutkan.html'">
+            <span>Relevansi</span>
+
+            <span class="material-symbols-outlined"> expand_more </span>
+          </div>
+        </div>
+
+        <!-- HARGA -->
+
+        <div class="section">
+          <div class="label">Batas Harga</div>
+
+          <div class="price-row">
+            <input type="text" class="price-input" placeholder="Rp Min" />
+
+            <div class="separator">-</div>
+
+            <input type="text" class="price-input" placeholder="Rp Max" />
+          </div>
+        </div>
+
+        <!-- LOKASI -->
+
+        <div class="section">
+          <div class="label">Lokasi</div>
+
+          <div class="location-list">
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Cirebon</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Pekalongan</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Solo</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Yogyakarta</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Semarang</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Jakarta</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Bali</label>
+            </div>
+
+            <div class="location-item">
+              <input type="checkbox" />
+              <label>Bandung</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <button
+          class="show-btn"
+          onclick="window.location.href = 'hasil-filter.html'">
+          Tampilkan Hasil
+        </button>
+      </div>
+
+      <div class="navbar">
+        <div class="nav-item">
+          <span class="material-symbols-outlined">home</span>
+          <div>Beranda</div>
+        </div>
+
+        <div class="nav-item active">
+          <span class="material-symbols-outlined">search</span>
+          <div>Cari</div>
+        </div>
+
+        <div class="nav-item">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <div>Pesanan</div>
+        </div>
+
+        <div class="nav-item">
+          <span class="material-symbols-outlined">person</span>
+          <div>Profil</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

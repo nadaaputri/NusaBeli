@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NusaBeli - Hasil Pencarian</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <style>
+      .search-result-header {
+        padding: 20px;
+      }
+
+      .filter-row {
+        display: flex;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .filter-button {
+        flex: 1;
+        height: 42px;
+
+        border: 1px solid #d9d9d9;
+        border-radius: 12px;
+
+        background: white;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .result-info {
+        padding: 0 20px 20px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        padding: 0 20px 100px;
+      }
+
+      .product-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .product-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+      }
+
+      .product-content {
+        padding: 12px;
+      }
+
+      .product-name {
+        font-size: 14px;
+        line-height: 1.5;
+        min-height: 42px;
+      }
+
+      .product-price {
+        margin-top: 8px;
+        color: #006b68;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      .product-location {
+        margin-top: 6px;
+        color: #777;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mobile-container">
+      <div class="topbar">
+        <div class="logo">NusaBeli</div>
+
+        <div class="topbar-icons">
+          <img src="assets/cart.png" class="icon-btn" />
+
+          <img src="assets/menu.png" class="icon-btn" />
+        </div>
+      </div>
+
+      <div class="search-result-header">
+        <div class="search-box">
+          <input type="text" class="search-input" value="Batik Biru" />
+
+          <img src="assets/search.png" class="search-action" />
+        </div>
+
+        <div class="filter-row">
+          <a href="filter.html" class="filter-button"> Filter </a>
+
+          <a href="urutkan.html" class="filter-button"> Urutkan </a>
+        </div>
+      </div>
+
+      <div class="result-info">
+        Menampilkan hasil pencarian untuk "Batik Biru"
+      </div>
+
+      <div class="product-grid">
+        <a href="detail-produk.html">
+          <div class="product-card">
+            <img src="assets/batik1.png" class="product-image" />
+
+            <div class="product-content">
+              <div class="product-name">
+                Kemeja Batik Biru Motif Mega Mendung
+              </div>
+
+              <div class="product-price">Rp150.000</div>
+
+              <div class="product-location">Cirebon</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html">
+          <div class="product-card">
+            <img src="assets/batik2.png" class="product-image" />
+
+            <div class="product-content">
+              <div class="product-name">Kain Batik Tulis Biru Tua</div>
+
+              <div class="product-price">Rp350.000</div>
+
+              <div class="product-location">Pekalongan</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html">
+          <div class="product-card">
+            <img src="assets/batik3.png" class="product-image" />
+
+            <div class="product-content">
+              <div class="product-name">Blouse Batik Biru Modern</div>
+
+              <div class="product-price">Rp125.000</div>
+
+              <div class="product-location">Solo</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="detail-produk.html">
+          <div class="product-card">
+            <img src="assets/batik4.png" class="product-image" />
+
+            <div class="product-content">
+              <div class="product-name">Sarung Batik Cap Biru Premium</div>
+
+              <div class="product-price">Rp120.000</div>
+
+              <div class="product-location">Pekalongan</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <a href="beranda.html" class="nav-item">
+        <div class="nav-icon"></div>
+
+        <span>Beranda</span>
+      </a>
+
+      <a href="hasil-pencarian.html" class="nav-item nav-active">
+        <div class="nav-icon"></div>
+
+        <span>Pencarian</span>
+      </a>
+
+      <a href="keranjang.html" class="nav-item">
+        <div class="nav-icon"></div>
+
+        <span>Pesanan</span>
+      </a>
+
+      <a href="#" class="nav-item">
+        <div class="nav-icon"></div>
+
+        <span>Profil</span>
+      </a>
+    </div>
+  </body>
+</html>

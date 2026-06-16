@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Urutkan Produk</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #d9d9d9;
+        display: flex;
+        justify-content: center;
+      }
+
+      .mobile {
+        width: 390px;
+        height: 844px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* BACKGROUND FILTER PAGE */
+
+      .page-bg {
+        width: 100%;
+        height: 100%;
+        background: #f7f8f8;
+      }
+
+      /* HEADER */
+
+      .header {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 30px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 500;
+      }
+
+      .close {
+        font-size: 34px;
+        color: #4b5563;
+      }
+
+      /* CONTENT */
+
+      .content {
+        padding: 24px 30px;
+      }
+
+      .label {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 14px;
+      }
+
+      .dropdown {
+        width: 100%;
+        height: 82px;
+        border-radius: 18px;
+        border: 4px solid #006b68;
+        background: white;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 0 16px;
+      }
+
+      .dropdown span {
+        font-size: 18px;
+      }
+
+      .dropdown .material-symbols-outlined {
+        color: #6b7280;
+      }
+
+      /* OVERLAY */
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.28);
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      /* DROPDOWN CARD */
+
+      .sort-card {
+        width: 360px;
+        margin-top: 300px;
+
+        background: #242935;
+
+        border-radius: 28px;
+
+        overflow: hidden;
+
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .option {
+        height: 122px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 0 24px;
+
+        color: white;
+        font-size: 28px;
+        font-weight: 400;
+
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
+        cursor: pointer;
+      }
+
+      .option:last-child {
+        border-bottom: none;
+      }
+
+      .radio {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 4px solid #d1d5db;
+      }
+
+      .radio.active {
+        border-color: #b5c9ff;
+        position: relative;
+      }
+
+      .radio.active::after {
+        content: "";
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        background: #b5c9ff;
+
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="mobile">
+      <div class="page-bg">
+        <div class="header">
+          <div class="title">Filter & Urutkan</div>
+
+          <span class="material-symbols-outlined close"> close </span>
+        </div>
+
+        <div class="content">
+          <div class="label">Urutkan</div>
+
+          <div class="dropdown">
+            <span>Relevansi</span>
+
+            <span class="material-symbols-outlined"> expand_more </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OVERLAY -->
+
+      <div class="overlay">
+        <div class="sort-card">
+          <div class="option" onclick="selectOption(this, 'Relevansi')">
+            <span>Relevansi</span>
+
+            <div class="radio active"></div>
+          </div>
+
+          <div class="option" onclick="selectOption(this, 'Harga Terendah')">
+            <span>Harga Terendah</span>
+
+            <div class="radio"></div>
+          </div>
+
+          <div class="option" onclick="selectOption(this, 'Harga Tertinggi')">
+            <span>Harga Tertinggi</span>
+
+            <div class="radio"></div>
+          </div>
+
+          <div class="option" onclick="selectOption(this, 'Terlaris')">
+            <span>Terlaris</span>
+
+            <div class="radio"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function selectOption(element, value) {
+        document
+          .querySelectorAll(".radio")
+          .forEach((r) => r.classList.remove("active"));
+
+        element.querySelector(".radio").classList.add("active");
+
+        setTimeout(() => {
+          window.location.href = "filter.html";
+        }, 300);
+      }
+    </script>
+  </body>
+</html>
